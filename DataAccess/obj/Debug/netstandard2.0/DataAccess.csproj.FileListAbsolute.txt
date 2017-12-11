@@ -1,0 +1,6 @@
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs

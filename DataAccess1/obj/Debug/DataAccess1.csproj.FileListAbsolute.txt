@@ -1,0 +1,10 @@
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\bin\Debug\DataAccess1.dll.config
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\bin\Debug\DataAccess1.dll
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\bin\Debug\DataAccess1.pdb
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\obj\Debug\DataAccess1.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\obj\Debug\DataAccess1.dll
+C:\Users\Usuario\source\repos\Practica7.12\DataAccess1\obj\Debug\DataAccess1.pdb

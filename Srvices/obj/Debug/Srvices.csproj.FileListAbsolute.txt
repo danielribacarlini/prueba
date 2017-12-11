@@ -1,0 +1,14 @@
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\Srvices.dll.config
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\Srvices.dll
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\Srvices.pdb
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\DataAccess1.dll
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\DataAccess1.pdb
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\DataAccess1.dll.config
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\obj\Debug\Srvices.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\obj\Debug\Srvices.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\obj\Debug\Srvices.dll
+C:\Users\Usuario\source\repos\Practica7.12\Srvices\obj\Debug\Srvices.pdb
