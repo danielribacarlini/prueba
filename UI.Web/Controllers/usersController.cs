@@ -8,124 +8,139 @@ using System.Web;
 using System.Web.Mvc;
 using DataAccess1;
 using Srvices;
+using Srvices.Model;
 
 namespace UI.Web.Controllers
 {
-    public class NewsController : Controller
+    public class usersController : Controller
     {
         private Context db = new Context();
 
-        // GET: News
+        // GET: users
         public ActionResult Index()
         {
-            var newsServices = new NewServices();
+            var usersServices = new UsersServices();
 
-            var news = newsServices.GetAll();
+            var users = usersServices.GetAll();
 
-            return View(news);
+            return View(users);
         }
 
-        // GET: News/Details/5
+        // GET: users/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            News news = db.News.Find(id);
-            if (news == null)
+            users users = db.users.Find(id);
+            if (users == null)
             {
                 return HttpNotFound();
             }
-            return View(news);
+            return View(users);
         }
 
-        // GET: News/Create
+        // GET: users/Create
         public ActionResult Create()
         {
-            ViewBag.userCreate = new SelectList(db.users, "userName", "password");
-            ViewBag.userModif = new SelectList(db.users, "userName", "password");
             return View();
         }
 
-        // POST: News/Create
+        // POST: users/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "title,description,userCreate,userModif,creationDate,updateDate")] News news)
+        public ActionResult Create(UsersDto user)
         {
             if (ModelState.IsValid)
             {
-                db.News.Add(news);
-                db.SaveChanges();
+
+                var usersServices = new UsersServices();
+
+                usersServices.Save(user);
+
                 return RedirectToAction("Index");
             }
 
-            ViewBag.userCreate = new SelectList(db.users, "userName", "password", news.userCreate);
-            ViewBag.userModif = new SelectList(db.users, "userName", "password", news.userModif);
-            return View(news);
+            return View(user);
         }
 
-        // GET: News/Edit/5
+        // GET: users/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            News news = db.News.Find(id);
-            if (news == null)
+            var userService = new UsersServices();
+
+            UsersDto user  = userService.GetOne(id);
+
+            
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.userCreate = new SelectList(db.users, "userName", "password", news.userCreate);
-            ViewBag.userModif = new SelectList(db.users, "userName", "password", news.userModif);
-            return View(news);
+            return View(user);
         }
 
-        // POST: News/Edit/5
+        // POST: users/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "title,description,userCreate,userModif,creationDate,updateDate")] News news)
+        public ActionResult Edit(UsersDto user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(news).State = EntityState.Modified;
-                db.SaveChanges();
+                var usersServices = new UsersServices();
+
+                usersServices.Update(user);
+
                 return RedirectToAction("Index");
             }
-            ViewBag.userCreate = new SelectList(db.users, "userName", "password", news.userCreate);
-            ViewBag.userModif = new SelectList(db.users, "userName", "password", news.userModif);
-            return View(news);
+            return View(user);
         }
 
-        // GET: News/Delete/5
+        // GET: users/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            News news = db.News.Find(id);
-            if (news == null)
+
+            var userService = new UsersServices();
+
+            UsersDto user = userService.GetOne(id);
+            //users users = db.users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(news);
+            return View(user);
         }
 
-        // POST: News/Delete/5
+        // POST: users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            News news = db.News.Find(id);
-            db.News.Remove(news);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var userService = new UsersServices();
+                UsersDto user = userService.GetOne(id);
+                userService.Delete(id);
+                return RedirectToAction("Index");
+            }
+            catch(Exception e)
+            {
+                ViewBag.Error = e.Message;
+                return View("Delete");
+            }
+            
         }
 
         protected override void Dispose(bool disposing)

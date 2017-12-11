@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DataAccess1.News>
+﻿
+@model IEnumerable<Srvices.Model.NewsDto>
 
 @{
     ViewBag.Title = "Index";
@@ -12,10 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.users.password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.users1.password)
+            @Html.DisplayNameFor(model => model.userCreate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.description)
@@ -32,11 +30,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.users.password)
+            @Html.DisplayFor(modelItem => item.userCreate)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.users1.password)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.description)
         </td>
